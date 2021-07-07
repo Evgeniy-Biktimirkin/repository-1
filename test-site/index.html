@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta author="Biktimirkin Evgeniy" 
+	charset="utf-8">                  <!-- почему author не красным? --> 
+	
+	<link href="styles/style.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<!-- строка выше бесполезна -->
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+<!-- надо и эту ссылку в HTML из Google fonts вставить, и в CSS
+ЗАЧЕМ-ТО прописать font-family: 'Potta One', cursive; -->
+
+    <title> <Evgeniy's test page> </title>
+	
+	<script src="scripts/script-2.js"> defer </script>
+
+  </head>
+  <body>
+  <h1>Homepage</h1>
+  <!-- нужно ul построить для дерева!!! -->
+  <ul>
+  <li><p>Home</p></li>
+  <li><p><a href="projects.html">Projects</a></p></li>
+  <li><p><a href="pictures.html">Pictures</a></p></li>
+  <li><p><a href="social.html">Social</a></p></li>
+  </ul>
+
+  <p>This is me, Biktimirkin Evgeniy Yurievich</p>
+    <img src="images/1-eb.JPG"
+	alt="The photo of Evgeniy with arms outstretched"
+	width = 500px>
+	
+ 
+	
+	<p>Родился в г.Куйбышев, СССР 26 ноября 1988 года.
+	В школе учился так себе. В университете - тоже. Зато везде умудрился найти
+	что-то интересное, к тому же теперь я инженер по специальности "Управление 
+	и информатика в технических системах". Но работаю конструктором электрики - 
+	придумываю, как можно сделать живое из неживого.</p>
+    <p>Творческий путь начал с романа "Территория Хаоса". Он был издан в г. Самара 
+    27.03.2011. Сейчас уже готова вторая версия этого романа.</p>
+    <p>В том же году осенью вышел роман "Интроверт", изданный Самарской областной 
+    организацией молодых литераторов. Мысли в романе настолько ценны, что придётся 
+    ещё долго думать, что с ним делать.</p>
+    <p>Ещё роман "Апостолы" написал в 2012 году, множество рассказов. Помню несколько 
+    статей и текстов меня просили написать - разумеется, был рад помочь.
+    Рассказ "Паритет" был опубликован в журнале "Молодёжная волна" №17 от 15.12.2016г. 
+    в г. Самара.</p>
+    <p>Были всякие периоды в творчестве: и времена застоя, и наоборот - в радости от 
+    присутствия Музы рядом. Сейчас же, 14 марта 2018, когда я пишу эти строки, я в 
+    Музе не нуждаюсь, но знаю, что, если будет нужно, она обязательно прилетит.</p>
+	
+	  	
+
+   <div class="form-reg">
+	<form action="/my-page-validator-on-the-same-server/" method="post">
+	<p> Регистрация </p>
+ <ul>
+  <li>
+    <label for="name">Name*:</label>
+    <input type="text" required id="name" name="user_name">
+  </li>
+  <li>
+    <li>
+    <label for="surname">Surname*:</label>
+    <input type="text" required id="surname" name="user_surname">
+  </li>
+  <li>
+    <label for="date-of-birth">Date of birth*:</label>     <!-- ПОМЕНЯТЬ НА ДАТУ РОЖДЕНИЯ - ВОЗРАСТ НЕ ХРАНЯТ -->
+    <input type="date" required id="date-of-birth" name="date-of-birth" min="1910-01-01" max="2007-01-05"
+    pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" placeholder="DD-MM-YYYY">   <!-- for non-supporting browsers
+      that convert "date" to "text"... Btw, Chrome always sets to дд.мм.гггг. -->
+	<p>Возрастное ограничение некоторого контента 16+</p>
+  </li>
+    <li>
+    <label for="sex">Sex:</label>
+    <p><li>Male</li><input type="radio" id="sex" name="user_sex"></p>   <!-- неправильно расположилось-->
+	<p><li>Female</li><input type="radio" id="sex" name="user_sex"></p>
+  </li>
+  <li>
+    <label for="mail">E-mail*:</label>
+    <input type="email" required id="mail" name="user_email"
+    minlength="7" maxlength="256" pattern=/^[a-zA-Z0-9.!#$%&*+\/?^_{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/>
+  </li>
+    <li>
+    <label for="login">Login*:</label>
+    <input type="text" id="login" required name="user_login" minlength="4"
+	maxlength="16" pattern=[A-Za-z]+>
+	<p>Только буквы: не меньше 4, не больше 16 символов</p>
+  </li>
+    <li>
+    <label for="password">Password*:</label>
+    <input type="text" id="password" required name="user_password"
+	minlength="5" maxlength="16" pattern=[A-Za-z0-9]+>
+	<p>Только буквы и цифры: не меньше 5,<br>
+	не больше 16 символов</p>
+  </li>
+    <li>
+    <label for="repeat_password">Repeat Password*:</label>
+    <input type="text" id="repeat_password" required name="user_password"
+	minlength="5" maxlength="16">
+	<p>* обозначены обязательные к заполнению поля</p>
+  </li>
+  <li class="button">
+    <button id="button-reg" name="button-reg" type="submit">Submit</button>
+  </li>
+ </ul>
+ </form>
+ </div>
+ 
+
+ <div class="form-login">
+ <form action="/my-page-validator-on-the-same-server/" method="post">  
+  <p>Уже зарегистрированы? Введите login и password </p>
+  <ul>
+  <li>
+    <label for="login">Login:</label>
+    <input type="text" id="login" required name="user_login" minlength="4"
+	maxlength="16" pattern=[A-Za-z]+>
+  </li>
+    <li>
+    <label for="password">Password:</label>
+    <input type="text" id="password" required name="user_password"
+	minlength="5" maxlength="16" pattern=[A-Za-z0-9]+>
+  </li>
+  <li class="button">
+    <button type="submit" id="button-login" name="button-login">Submit</button>
+  </li>
+  </ul>
+  </form>   
+ </div>
+  
+	
+	
+  <h1>The main conception is creation</h1>
+  <h2>The next thing is the works of art </h2>
+  <h3>More specifically - things that I wrote</h3>
+  <h4>These are the covers of the earlier editions of my first novels
+  and my recent works</h4>
+  
+  
+  
+
+  
+   <!-- + need form for search-->
+   
+   
+  
+  
+  <img src="images/2-ct.jpeg"
+	alt="The Chaos Theory cover (arrows on the white background)">
+    <p>This is my very first work which is now remained only in few copies.</p>
+	
+	
+  <a href="https://proza.ru/2019/06/12/206"
+	title="Introvert (free snippet)"
+	target="_blank">
+  <img src="images/3-introv.jpg"
+	alt="A guy with short hair on the violet background"
+	width = 185px></a>
+	<p>My second work, which remained in few copies, but an excerpt is
+	also available on several sites. This novel is reasoning about how we
+	feel and think.</p>
+	
+	
+  <a href="https://ridero.ru/books/territoriya_khaosa/"
+	title="Chaos Territory on Ridero"
+	target="_blank">
+  <img src="images/5-th.jpg"
+	alt="Dense forest"
+	width = 270px
+	height = 360px></a>
+	<p>The second edition of my first work. I rewrote it completely so
+it became much better and interesting in my humble opinion.</p>
+    <p>The novel tells about Evgeniy and his pursuit of comprehending the
+strangeness of what we call "trivia".</p>
+	
+  <a href="https://ridero.ru/books/plany_bytiya/"
+	title="Planes of Being on Ridero"
+	target="_blank">
+  <img src="images/6-pb.jpg"
+	alt="Snowy mountains"
+	width = 270px
+	height = 360px></a>
+	<p>The storybook with the astonishing title story about Sofron,
+character from the Universe of other books.
+He returned to that Earth after suicide...</p>
+	
+  <a href="https://ridero.ru/books/iskra_1/"
+	title="The Spark on Ridero"
+	target="_blank">
+  <img src="images/7-is.jpg"
+	alt="Blurry shiny silhouette"
+	width = 270px
+	height = 360px></a>
+	<p>The novel about protagonist from the Chaos Territory and his
+	extraterrestrial journey. </p>
+	
+  <a href="https://ridero.ru/books/universum/"
+	title="The Universum on Ridero"
+	target="_blank">
+  <img src="images/8-un.jpg"
+	alt="Planets"
+	width = 270px
+	height = 360px></a>
+	<p>The continuation of journey. Very many different conceptions and
+	questions I wanted to discuss here with You, my Reader.</p>
+  
+  
+  <p>Familiarize with my<a href="https://ridero.ru/author/biktimirkin_evgenii_podb/"
+  title="My page on Ridero">
+  recent works </a></p>
+		
+  <p>or with <a href="https://www.proza.ru/avtor/frostbrand"
+  title="My page on Proza.ru"
+  target="_blank"> some older works</a>
+     that You might be interested in</p>
+	 
+	 
+  <p>Read/download fragments for acquaintance:
+  <a href="resources\chaos-territory-part.pdf"
+  target="_blank">
+  <img src="images/pdf-icon.jpg"
+  width = 21px
+  height = 28px>
+  chaos-territory-part.pdf</a></p>
+  
+  <p><a href="resources\planes-of-being-part.pdf"
+  target="_blank">
+  <img src="images/pdf-icon.jpg"
+  width = 21px
+  height = 28px>
+  planes-of-being-part.pdf</a></p>
+
+
+  	<!-- simple dialogue via email form -->
+ <div class="form-email">
+ <form action="javascript:void(0)" method="post"> <!--в action должно быть название файла PHP
+    или JS-->
+	<p>Есть вопросы? Задайте их здесь </p>
+ <ul>
+  <li>
+    <label for="name">Your name:</label>
+    <input type="text" required id="name" minlength="1" maxlength="150"
+    name="user_name">
+  </li>
+  <li>
+    <label for="mail">Your e-mail:</label>
+    <input type="email" required id="mail" name="user_email" 
+     minlength="7" maxlength="256" pattern=[a-zA-Z0-9.!#$%&*+\/?^_{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$>
+  </li>
+  <li>
+    <label for="msg">Your message:</label>
+    <textarea required id="msg" name="user_message" maxlength="400"></textarea>
+  </li>
+  <li class="button">
+    <button onclick="sendMail(); return false" type="submit" id="button-mail" name="button-mail">Submit</button>
+  </li> 
+ </ul>
+ </form>
+ </div>
