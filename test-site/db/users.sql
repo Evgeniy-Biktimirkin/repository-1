@@ -21,7 +21,7 @@ USE `test-site-users` ;
 -- Table `test-site-users`.`users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `test-site-users`.`users` (
-  `user-serial-number` INT NOT NULL AUTO_INCREMENT,
+  `user-id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(25) NOT NULL,
   `surname` VARCHAR(40) NOT NULL,
   `date-of-birth` DATE NOT NULL,
@@ -35,6 +35,15 @@ CREATE TABLE IF NOT EXISTS `test-site-users`.`users` (
   ``  NULL,
   `` VARCHAR(45) NULL,
   PRIMARY KEY (`user-serial-number`));
+  
+  INSERT INTO users (user-id, name, surname, date-of-birth, sex, email, password,
+  authorized) values (1, "Nickolay", Fokin, 1980-03-24, m, 
+
+
+
+
+
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
