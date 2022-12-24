@@ -11,7 +11,7 @@
 <!-- надо и эту ссылку в HTML из Google fonts вставить, и в CSS
 ЗАЧЕМ-ТО прописать font-family: 'Potta One', cursive; -->
 
-    <title> <Evgeniy's test page> </title>
+    <title><Evgeniy's test page></title>
 	
 	<script src="scripts/script-2.js"> defer </script>
 
@@ -236,7 +236,7 @@ He returned to that Earth after suicide...</p>
 
   	<!-- simple dialogue via email form -->
  <div class="form-email">
- <form action="javascript:void(0)" method="post"> <!--в action должно быть название файла PHP
+ <form action="msg-form.php" method="post"> <!--в action должно быть название файла PHP
     или JS-->
 	<p>Есть вопросы? Задайте их здесь </p>
  <ul>
@@ -250,9 +250,9 @@ He returned to that Earth after suicide...</p>
     <input type="email" required id="mail" name="user_email" 
      minlength="7" maxlength="256" pattern=[a-zA-Z0-9.!#$%&*+\/?^_{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$>
   </li>
-  <li>
     <label for="msg">Your message:</label>
-    <textarea required id="msg" name="user_message" maxlength="400"></textarea>
+    <textarea required id="msg" name="user_message" maxlength="400"
+    pattern=(\s+|^)([пПnрРp]?[3ЗзВBвПnпрРpPАaAаОoO0о]?[сСcCиИuUОoO0оАaAаыЫуУyтТT]?|\w*[оаАaAО0oO])[Ппn][иИuUeEеЕ][зЗ3][ДдDd]\w*[\?\,\.\!\;\-]*|(\s+|^)\w{0,4}[оОoO0иИuUаАaAcCсСзЗ3тТTуУy]?[XxХх][уУy][йЙеЕeёЁEeяЯ9юЮиИuU]\w*[\?\,\.\;\-\!]*|(\s+|^)[бпПnБ6][лЛ][яЯ9]+([дтДТDT]\w*)?[\?\,\.\;\!\-]*|(\s+|^)\w*[бпПnБ6][лЛ][яЯ9][дтДТDT]\w+[\?\,\.\;\-\!]*|(\s+|^)(\w*[оОoO0ъЪьыЫЬаАaAзЗ3уУy])?[еЕeEиИuUёЁ][бБ6пП]([оОoO0ыЫаАaAнНHиИuUуУyлЛеЕeкКkKE]\w*)?[\?\,\!\.\;\-]*|\s*^?[ШшЩщ][лЛ][юЮ][хХxX]?[шШщЩ]?[кКkK]?\w*[\?\,\!\.\;\-]*|\s*^?[сСcC][цЦ]?[уyУ]+[чЧ]?[КkKк]*\w*[\?\,\!\.\;\-]*|\s*^?[пПn][uUИи][Дд][aAАаоОoO0][Рpр]\w*[\?\,\!\.\;\-]*|\s*^?[гГ][ОoOоаАaA][НHн][Дд][oOО0о][нНH]\w*[\?\,\!\.\;\-]*|\s*^?\w*[3Зз][аАaAоОoO0][лK][уyУ][пПn]\w*[\?\,\!\.\;\-]*></textarea>
   </li>
   <li class="button">
     <button onclick="sendMail(); return false" type="submit" id="button-mail" name="button-mail">Submit</button>
