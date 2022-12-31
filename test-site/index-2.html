@@ -41,10 +41,10 @@
 	 						minlength="5" maxlength="16" pattern=^[a-zA-Z0-9]+>
 	 					</li>
 	 					<li class="button_log" id="login">
-	   						<button type="submit" id="button_login" name="button_login" onclick="loginClick()">Login</button>
+	   						<button type="submit" id="button_login" name="button_login" onclick="loginClick()">Log In</button>
 					 	</li>
 						<li class="button_log" id="logout">
-							<button type="submit" id="button_logout" name="button_login">Logout</button>
+							<button type="submit" id="button_logout" name="button_login">Log Out</button>
 						</li>
 	 				</ul>
 	 			</form>
@@ -76,7 +76,7 @@
 						<li><label for="login">Login*:</label>
 							<input type="text" id="log_reg" required name="user_login" minlength="4"
 							maxlength="16" pattern=^[a-zA-Z0-9]+$>
-							<p>Only letters and numbers: 4 - 16 characters</p>
+							<p>Letters and numbers: 4 - 16 characters</p>
 				  		</li>
 						<li><label for="password">Password*:</label>
 							<input type="text" id="pswd_reg" required name="user_password"
@@ -183,7 +183,7 @@
 		<div class="area-15">
  			<div class="form-email" ><!-- id="form_email" -->
  				<form action="msg-form.php" method="post" id="form_email">
-					<p>Questions? Feel free to ask them here </p>
+					<h3>Questions? Feel free to ask them here </h3>
  					<ul>
   						<li><label for="name">Your name:</label>
     						<input type="text" required id="name" minlength="2" maxlength="120" name="user_name">

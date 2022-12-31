@@ -6,7 +6,7 @@ html {
  background-color: #FDF9D8;
 }
 body {
-  width: 1140px;
+  width: 1200px;
   margin: 20px auto;    
   background-color: #eef9f9;
   padding: 0 20px 0px 20px;    
@@ -31,7 +31,7 @@ body {
                        "area-15 area-16";
   grid-template-rows: 40px 100px auto auto auto auto auto auto auto auto auto auto 300px;
   grid-template-columns: 80% 20%;
-  width: 1000px;
+  width: 1140px;
   text-align: center;
 }
 .area-1{
@@ -163,14 +163,10 @@ body {
   padding-bottom: 20px;
 }
 .area-16, #p_icon_1, #p_icon_2, #p_icon3 {
-    /* display: inline;
-    justify-content:center;
-    align-self:flex-end; */
     display: flex;
     flex-wrap: nowrap;
     justify-content:flex-end;
     align-self:flex-end;
-
 }
 h2 {
   font-size: 30px;
@@ -217,8 +213,8 @@ form {
 ul {
   list-style: none;
 }
-form li + li{
-  margin-top: 1em;
+form li {
+  margin: 1em 28px 0 0;
 }
 label {
   display: block;
@@ -240,10 +236,10 @@ textarea:focus {
 }
 .button_log{
   display: inline-block;
-  padding: 1em 1em 0em 1em;
+  padding: 1em 4px 0em 4px;
 }
 #form_email{
-  width: 750px;
+  width: 650px;
 }
 /* #button_login{
   background-color: rgb(186, 245, 193);
