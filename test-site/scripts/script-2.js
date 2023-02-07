@@ -1,3 +1,7 @@
+//НИЧЕГО НЕ ТРОГАЙ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//НЕ СЛОМАНО - НЕ ЧИНИ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//ЧИСТОГАНОМ УРОК ПРОТИВ МАМИНОГО РУКОБЛУДСТВА
+
 var butLogin = document.querySelector("#button_login");
 var butLogout = document.querySelector("#button_logout");
 var formReg = document.querySelector(".form-reg");
@@ -6,14 +10,30 @@ var repeatPswd = document.querySelector("#repeat_password");
 var DOB = document.querySelector("#date_of_birth");
 
 function loginClick(){ //для сравнения с диапазоном валидности длины логина и пароля
-  var logLog = document.querySelector("#log_log").value.length;
-  var pswdLog = document.querySelector("#pswd_log").value.length;
+ /*  var logLog = document.querySelector("#log_log").value.length;
+  var pswdLog = document.querySelector("#pswd_log").value.length; */
 
-  if ( (4 <= logLog && logLog <= 16) && (5 <= pswdLog && pswdLog <= 16) ){
+  var loginVal = document.querySelector("#log_log").value;
+  var passwordVal = document.querySelector("#pswd_log").value;
+
+  var accessFlds = [
+    {lgn:"Alec", pwd:"A1c4$h"},
+    {lgn:"Fedr", pwd:"F1br3"}
+  ];
+  accessFlds.forEach(function(row){
+    if((loginVal == row.lgn) && (passwordVal == row.pwd)){
+      butLogin.addEventListener("onclick", loginFade()); //вызывает только, если нужной длины
+    } else
+    {return;}
+  })
+}
+  
+/*   if ( (4 <= logLog && logLog <= 16) && (5 <= pswdLog && pswdLog <= 16) ){
     butLogin.addEventListener("onclick", loginFade()); //вызывает только, если нужной длины
  } else
  {return;}
-}
+} */
+
 function loginFade(){ //сама функция убирания кнопки и формы 
   butLogout.style.display = "none";
   formReg.style.display = "none";
@@ -48,4 +68,5 @@ DOB.onchange = function ageValid() {
     false; //если юзер взрослый - оставляем его дату
   }
 }
+
 
