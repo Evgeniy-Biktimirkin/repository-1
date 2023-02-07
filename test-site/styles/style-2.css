@@ -4,9 +4,10 @@ html {
   /*зачем и здесь прописывать шрифт?, но без этого по умолчанию включится*/
   /* "this should be the rest of the output you got from Google fonts" */
  background-color: #FDF9D8;
+ scroll-behavior: smooth;
 }
 body {
-  width: 1140px;
+  width: 1200px;
   margin: 20px auto;    
   background-color: #eef9f9;
   padding: 0 20px 0px 20px;    
@@ -28,10 +29,10 @@ body {
                        "area-12 area-4"
                        "area-13 area-4"
                        "area-14 area-4"
-                       "area-15 area-4";
+                       "area-15 area-16";
   grid-template-rows: 40px 100px auto auto auto auto auto auto auto auto auto auto 300px;
   grid-template-columns: 80% 20%;
-  width: 1000px;
+  width: 1140px;
   text-align: center;
 }
 .area-1{
@@ -158,6 +159,18 @@ body {
   text-align: center;
   margin: auto 30px;
 }
+.area-16{
+  grid-area: area-16;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: end;
+  align-self:flex-end;
+}
+.div_icons {
+     display: inline;
+    justify-content: end;
+    align-self: flex-end;
+}
 h2 {
   font-size: 30px;
   margin: 0;
@@ -203,8 +216,8 @@ form {
 ul {
   list-style: none;
 }
-form li + li{
-  margin-top: 1em;
+form li {
+  margin: 1em 28px 0 0;
 }
 label {
   display: block;
@@ -226,16 +239,30 @@ textarea:focus {
 }
 .button_log{
   display: inline-block;
-  padding: 1em 1em 0em 1em;
+  padding: 1em 4px 0em 4px;
 }
 #form_email{
-  width: 750px;
+  width: 650px;
 }
+.logos{
+  padding: 0 10px 0 10px;
+}
+
+#div_icon_4{
+  opacity: 0.3;
+}
+#div_icon_4:hover{
+  opacity: 1;
+}
+
+
+
 /* #button_login{
   background-color: rgb(186, 245, 193);
 }
 #button_logout{
   background-color: rgb(245, 229, 186);
 } при любых изменениях -> превращаются из дефолтных изящных в чопорные*/
+
 
 
