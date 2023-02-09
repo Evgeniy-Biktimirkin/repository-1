@@ -33,10 +33,10 @@
 				<form action="/my-page-validator-on-the-same-server/" method="post">  
 					<h3>Login</h3>
 					<ul>
-						<li><label for="login">Login:</label>
+						<li><label for="login" id="log_lbl">Login:</label>
 				   			<input type="text" id="log_log" required name="user_login" minlength="4" maxlength="16" pattern=^[a-zA-Z0-9]+$>
 					 	</li>
-				   		<li><label for="password">Password:</label>
+				   		<li><label for="password" id="pwd_lbl">Password:</label>
 				   			<input type="text" id="pswd_log" required name="user_password"
 	 						minlength="5" maxlength="16" ><!-- pattern=^[a-zA-Z0-9]+ -->
 	 					</li>
@@ -44,7 +44,7 @@
 	   						<button type="button" id="button_login" name="button_login_name" onclick="loginClick()">Log In</button>
 					 	</li>
 						<li class="button_log" id="logout">
-							<button type="button" id="button_logout" name="button_logout_name">Log Out</button>
+							<button type="reset" id="button_logout" name="button_logout_name" onclick="loginAppear()" style="display: none;">Log Out</button>
 						</li>
 	 				</ul>
 	 			</form>
