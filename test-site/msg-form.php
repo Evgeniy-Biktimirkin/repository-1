@@ -1,25 +1,29 @@
 <?php
-if((isset($_POST["user_name"])) && (!empty($_POST["user_name"]))) {
-  /*   */
-    $user_name = $_POST["user_name"];
-}
-if((isset($_POST["user_email"])) && (!empty($_POST["user_email"]))) {
-  /*   */
-    $user_email = $_POST["user_email"];
-}
-if((isset($_POST["user_message"])) && (!empty($_POST["user_message"]))) {
-  /*  */
-    $user_message = $_POST["user_message"];
-}
-$msg_rcvd_arr = [
-  "user" => $user_name,
-  "e-mail" => $user_email,
-  "user_message" => $user_message,
-];
 
-echo "<pre>";
-var_export($msg_rcvd_arr);
-echo "</pre>";
+/* MS SQL Server */
+$serverName = "AlexHomePC\SQLEXPRESS";
+$conn_options = array("UID" => "sa",  "PWD" => "sa", "Database" => "test_site_db");
 
-/* echo "Имя: $user_name </br> e-mail: $user_email </br> Сообщение: $user_message"; */
+$conn = sqlsrv_connect($serverName, $conn_options);
+
+if( $conn == false )
+     {
+     echo "Could not connect to DB.\n";
+     die ('Error connecting to the SQL Server database.');
+     }
+
+     $user_name = $_POST["user_name"];
+     $user_email = $_POST["user_email"];
+     $user_message = $_POST["user_message"];
+
+$query_users_ins = "INSERT INTO dbo.messages (name, email, message)
+    VALUES 
+    ('$user_name','$user_email','$user_message')";
+$result_users_ins = sqlsrv_query($conn, $query_users_ins) or die('Error querying a MSSQL database');
+
+sqlsrv_close($conn);
+
+echo 'Inserted values are : ' . '<br/>' . $user_name . '<br/>' . $user_email . '<br/>' . $user_message ;                 
+
+
 ?>

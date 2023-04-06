@@ -57,7 +57,7 @@ function loginAppear(){ //функция восстановления кнопк
 }
 
 
-function repeatPassword(){ //чтобы появлялось сообщение, если пароли не совпадают
+function repeatPassword(){ //чтобы появлялось сообщение, если пароли в окне рег-ции не совпадают
   if(pswd.value != repeatPswd.value) {
     repeatPswd.setCustomValidity("Passwords don't match");
   } else {
@@ -68,7 +68,7 @@ pswd.onchange = repeatPassword; //и при изменении пароля ...
 repeatPswd.onkeyup = repeatPassword; //и при вводе в Повторении активируется
 
 
-DOB.onchange = function ageValid() {
+  DOB.onchange = function ageValid() {
   var DOBStr = document.querySelector("#date_of_birth").value; //выбранная юзером в календарике
   var DOBObj = new Date(DOBStr); //дата из строки
 

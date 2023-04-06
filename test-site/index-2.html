@@ -30,7 +30,7 @@
 		</div>
 		<div class="area-4">
 		  	<div class="form-login">
-				<form action="/my-page-validator-on-the-same-server/" method="post">  
+				<form action="login-form.php" method="get">  
 					<h3>Login</h3>
 					<ul>
 						<li><label for="login" id="log_lbl">Login:</label>
@@ -50,7 +50,7 @@
 	 			</form>
 			</div>
 			<div class="form-reg">
-				<form action="/my-page-validator-on-the-same-server/" method="post">
+				<form action="reg-form.php" method="post">
 					<h3>Not registered yet? You can do it here</h3>
 				 	<ul class="form-reg-ul">
 				  		<li><label for="name">Name*:</label>
@@ -59,8 +59,8 @@
 						<li><label for="surname">Surname:</label>
 							<input type="text" id="surname" name="user_surname"  minlength="2" maxlength="50"><!-- pattern=^[А-ЯёЁа-яa-zA-Z]+$ -->
 				  		</li>
-				  		<li><label for="date-of-birth">Date of birth*:</label>
-							<input type="date" required id="date_of_birth" name="date-of-birth" min="01-01-1900" max="01-09-2007"
+				  		<li><label for="date_of_birth">Date of birth*:</label>
+							<input type="date" required id="date_of_birth" name="date_of_birth" min="01-01-1900" max="01-09-2007"
 							pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" placeholder="DD-MM-YYYY">
 						<p>The age limit for some content is 16+</p>
 				  		</li>
@@ -80,7 +80,7 @@
 				  		</li>
 						<li><label for="password">Password*:</label>
 							<input type="text" id="pswd_reg" required name="user_password"
-							minlength="5" maxlength="16" ><!-- pattern=^[a-zA-Z0-9]+$ -->
+							minlength="5" maxlength="16" ><!-- pattern=\S -->
 							<p>5 - 16 characters</p>
 				  		</li>
 						<li><label for="repeat_password">Repeat Password*:</label>
