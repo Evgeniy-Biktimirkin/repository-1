@@ -1,0 +1,44 @@
+BEGIN TRANSACTION; 
+
+INSERT INTO dbo.users (name,surname,dateofbirth,sex,email,login,password)
+VALUES ('gh','REGHovsky','2007-02-28','','gh@REGHovsky.gmail','REGH','REGH_pswd');
+/
+INSERT INTO dbo.users (name,surname,dateofbirth,sex,email,login,password)
+VALUES ('trh','tRESHovskiy','2007-12-30','','trh@REGHovski.gmail','tRESH','tRESH_pswd');
+
+/
+create table users (
+id int identity primary key,
+login nvarchar(16) not null unique constraint CK_log_without_spaces check(login not like '% %'),
+password nvarchar(258) not null constraint CK_pw_without_spaces check(password not like '% %'),
+registered bit default 1, -- Чтобы при логине выдавалась эта 1, а не var из T-SQL
+email nvarchar(256) not null constraint CK_email_users check(email like '%@%'),
+name nvarchar(120) not null,
+surname nvarchar(30),
+dateofbirth date not null CONSTRAINT CK_user_Age CHECK(datediff(month, dateofbirth, (CONVERT (date, SYSDATETIME() ) ) ) >= 192), --проверка на 16-летие
+sex char(1) constraint CK_sex check(sex in ('','m','f'))
+);
+/
+
+create table messages (
+id int identity primary key,
+name nvarchar(120) not null,
+message nvarchar(400),
+date_of_msg date not null default FORMAT(SYSDATETIME(),'yyyy-MM-dd hh:mm'),
+email nvarchar(256) not null constraint CK_email_msg check(email like '%@%'),
+registered bit default 1 -- Чтобы при логине выдавалась эта 1, а не var из T-SQL
+);
+
+COMMIT TRANSACTION;
+/
+drop table users;
+drop table messages;
+
+select CONVERT (date, SYSDATETIME() ) ;
+
+select * from users;
+select * from messages;
+
+alter database test_site_db character set utf8; --е..стественно х.
+alter table users alter column surname nvarchar(30) collate Cyrillic_General_CI_AS; --такая и так установлена
+--name nvarchar(120), 

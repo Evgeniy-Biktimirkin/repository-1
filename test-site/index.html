@@ -9,6 +9,11 @@
 	<!-- надо и эту ссылку в HTML из Google fonts вставить, и в CSS
 	ЗАЧЕМ-ТО прописать font-family: 'Potta One', cursive; -->
 	<title><Evgeniy's test page></title>
+
+	<script>
+		var lIn = '<?php $lIn ?>'
+	</script>
+	
 </head>
 <body>
     <div class="actual-body">
@@ -24,7 +29,7 @@
           			<li class="menu-li"><a href="index-2.html">Home</a></li>
           			<li class="menu-li"><a href="#works">Works</a></li>
           			<li class="menu-li"><a href="pictures.html">Pictures</a></li>
-          			<li class="menu-li"><a href="forum.html">Forum</a></li>
+          			<li class="menu-li" id="forum_link" style="display:none"><a href="forum.html">Forum</a></li>
         		</ul>
       		</nav>
 		</div>

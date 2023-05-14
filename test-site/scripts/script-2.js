@@ -14,6 +14,8 @@ var pswInput = document.querySelector("#pswd_log");
 var logLabel = document.querySelector("#log_lbl");
 var pwdLabel = document.querySelector("#pwd_lbl");
 
+var fLink = document.querySelector("#forum_link");
+
 function loginClick(){ //для сравнения с массивом допустимых пар: логин-пароль
   var loginVal = document.querySelector("#log_log").value;
   var passwordVal = document.querySelector("#pswd_log").value;
@@ -28,6 +30,7 @@ function loginClick(){ //для сравнения с массивом допу�
         loginFade()}, 400);
       butLogin.addEventListener("onclick", loginFDelay());
       //butLogin.addEventListener("onclick", loginFade()); //мгновенный вызов. Только при совпадении пар: логин-пароль
+      linksApear();
     } else
     {return;}
   })
@@ -41,6 +44,8 @@ function loginFade(){ //функция мгновенного убирания �
 
   butLogin.style.display = "none";
   formReg.style.display = "none";
+  fLink.style.display = "none";
+  /* СПРЯТАТЬ ССЫЛКУ ПОСТА РАССКАЗОВ ЮЗЕРА */
   butLogout.style.display = "inline-block"
 }
 
@@ -53,8 +58,26 @@ function loginAppear(){ //функция восстановления кнопк
 
   butLogin.style.display = "inline-block";
   formReg.style.display = "inline-block";
+  fLink.style.display = "inline-block";
   butLogout.style.display = "none"
 }
+
+function linksApear (){
+  if (lIn = 1){
+    fLink.style.display = "inline-block";
+    /* ДОБАВИТЬ ССЫЛКУ ФОРУМА */
+
+    }
+    else
+      /* ЕСЛИ НАЖАЛИ ЛОГАУТ */
+    {
+      fLink.style.display = "none";
+      /* СПРЯТАТЬ ССЫЛКУ ФОРУМА */
+
+    }
+}
+
+
 
 
 function repeatPassword(){ //чтобы появлялось сообщение, если пароли в окне рег-ции не совпадают
