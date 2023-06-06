@@ -6,8 +6,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<!-- строка выше бесполезна -->
 	<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
-	<!-- надо и эту ссылку в HTML из Google fonts вставить, и в CSS
-	ЗАЧЕМ-ТО прописать font-family: 'Potta One', cursive; -->
+	<!-- надо и эту ссылку в HTML из Google fonts вставить, и в CSS -->
 	<title><Evgeniy's test page></title>
 
 	<script>
@@ -26,10 +25,11 @@
 		<div class="area-3" id="main-menu">
         	<nav class="navbar-menu">
         		<ul id="nav" class="navbar-nav">
-          			<li class="menu-li"><a href="index-2.html">Home</a></li>
+          			<li class="menu-li"><a href="index.html">Home</a></li>
           			<li class="menu-li"><a href="#works">Works</a></li>
           			<li class="menu-li"><a href="pictures.html">Pictures</a></li>
-          			<li class="menu-li" id="forum_link" style="display:none"><a href="forum.html">Forum</a></li>
+          			<li class="menu-li" style="display:none" id="forum_link"><a href="forum.html">Forum</a></li>
+					<li class="menu-li" id="user_works" style="display:none"><a href="user_works.html">User works</a></li>
         		</ul>
       		</nav>
 		</div>
@@ -49,7 +49,7 @@
 	   						<button type="submit" id="button_login" name="button_login_name" onclick="loginClick()">Log In</button><!--   -->
 					 	</li>
 						<li class="button_log" id="logout">
-							<button type="reset" id="button_logout" name="button_logout_name" onclick="loginAppear()" style="display: none;">Log Out</button>
+							<button type="reset" id="button_logout" name="button_logout_name" onclick="logoutClick()" style="display: none;">Log Out</button>
 						</li>
 	 				</ul>
 	 			</form>
@@ -124,12 +124,11 @@
     		<p>I have not written for a long time, although sometimes I write down beautiful ideas.</p>
 		</div>
 		<div class="area-7">
-  			<h2>The main conceptions here is experiment</h2>
-  			<h3>Which is why I used different tags even though it's illogical and ugly</h3>
-  			<h2>The next thing is the works of art </h2>
-  			<h3>More specifically - things that I wrote</h3>
-  			<h3>These are the covers of the earlier editions of my first novels
-  			and my recent works</h3>
+  			<h2>To build this tiny "site",</h2>
+  			<h3>which is in fact a complex structure</h3>
+  			<h2>of mechanizms,</h2>
+  			<h3>I had to work a little</h3>
+  			<h3>as a tester and as an analyst.</h3>
   		</div>
 		<div class="area-8">
   			<img src="images/2-ct.jpeg" alt="The Chaos teritory cover (arrows on the white background)">

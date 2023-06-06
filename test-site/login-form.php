@@ -21,8 +21,8 @@ while($row = sqlsrv_fetch_array ($result_users_sel)) {
     echo " CONGRATULATIONS!! YOU LOGGED IN AS : " . $user_login . " !!!";
     /* $lIn = 1; -- ВМЕСТО КУКИ */
     $time = 60*60*24;
-    setcookie('login', $user_login, time()+$time, '/'); //имеем право создать куки, ибо успешно залогинились
-    setcookie('password', md5($user_password), time()+$time, '/'); //тут неважно, какой алгоритм
+    setcookie('login', $user_login, time()+$time, '/'); //создаём куки
+    setcookie('password', $user_password, time()+$time, '/'); //неважно, какой алгоритм хеширования
     echo '<script>setTimeout(function(){document.location.href = "/index.html"}, 3500)</script>';
 }
 }
@@ -31,7 +31,7 @@ if (!sqlsrv_has_rows($result_users_sel)) //если НЕ нашлось стро
     echo " Incorrect login and/or password";
     /* $lIn = 0; -- ВМЕСТО КУКИ*/
     setcookie('login', $user_login, time()-3600, '/'); //удаляем соответствующие куки
-    setcookie('password', md5($user_password), time()-3600, '/'); //тут неважно, какой алгоритм
+    setcookie('password', $user_password, time()-3600, '/'); //неважно, какой алгоритм хеширования
     echo '<script>setTimeout(function(){document.location.href = "/index.html"}, 3500)</script>';
 }
 

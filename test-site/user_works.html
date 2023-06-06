@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta author="Biktimirkin Evgeniy" charset="utf-8">
+	<link href="styles/style-2.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<!-- строка выше бесполезна -->
+	<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+	<!-- надо и эту ссылку в HTML из Google fonts вставить, и в CSS -->
+	<title><Evgeniy's 2nd test page></title>
+
+	<script>
+		//var lIn = '<?php $lIn ?>'
+		window.onload = function (){if (cooPVerif != null){
+			document.getElementById("divo").style.visibility="visible"; //для авторизованных
+			document.getElementById("ahref").style.visibility="hidden";
+			document.getElementById("paragraph").style.visibility="hidden";
+		}else{return;}}
+	</script>
+	
+</head>
+<body>
+	<p><a id="ahref" href="index.html">Home</a></p>
+	<p id="paragraph">Only authorized users can upload their works. You may go to the start page to log in first.</p>
+	<div style="visibility: hidden;" id="divo">
+		<div class="actual-body">
+			<div class="area-1">
+				<nav class="navbar-menu">
+					<ul id="nav" class="navbar-nav">
+						<li class="menu-li"><a href="index.html">Home</a></li>
+						<li class="menu-li"><a href="pictures.html">Pictures</a></li>
+						<li class="menu-li"><a href="forum.html">Forum</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="area-2">
+				
+			</div>
+			<div class="area-3" id="main-menu">
+				<h3>Here you can upload your works. They won't be modered.
+					The site owner isn't responsible for the content.
+					Your texts here only for convenience and others acquaintance.</h3>
+			</div>
+			<div class="area-4">
+				<!-- <div class="form-login">
+					<form action="login-form.php" method="post">  
+						<h3>Login</h3>
+						<ul>
+							<li><label for="login" id="log_lbl">Log in:</label>
+								<input type="text" id="log_log" required name="user_login" minlength="4" maxlength="16" pattern=^[a-zA-Z0-9]+$>
+							</li>
+							<li><label for="password" id="pwd_lbl">Password:</label>
+								<input type="text" id="pswd_log" required name="user_password"
+								minlength="5" maxlength="16">
+							</li>
+							<li class="button_log" id="login">
+								<button type="submit" id="button_login" name="button_login_name" onclick="loginClick()">Log In</button>
+							</li>
+							<li class="button_log" id="logout">
+								<button type="reset" id="button_logout" name="button_logout_name" onclick="logoutClick()" style="display: none;">Log Out</button>
+							</li>
+						</ul>
+					</form>
+				</div> -->
+				<!-- <div class="form-reg">
+					<form action="reg-form.php" method="post">
+						<h3>Not registered yet? You can do it here</h3>
+						<ul class="form-reg-ul">
+							<li><label for="name">Name*:</label>
+								<input type="text" required id="name" name="user_name" minlength="2" maxlength="120" >
+							</li>
+							<li><label for="surname">Surname:</label>
+								<input type="text" id="surname" name="user_surname"  minlength="2" maxlength="50">
+							</li>
+							<li><label for="date_of_birth">Date of birth*:</label>
+								<input type="date" required id="date_of_birth" name="date_of_birth" min="01-01-1900" max="01-09-2007"
+								pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" placeholder="DD-MM-YYYY">
+							<p>The age limit for some content is 16+</p>
+							</li>
+						
+							<li><label for="mail">E-mail*:</label>
+								<input type="email" required id="mail" name="user_email"
+								minlength="7" maxlength="256">
+							</li>
+							<li><label for="login">Login*:</label>
+								<input type="text" id="log_reg" required name="user_login" minlength="4"
+								maxlength="16" pattern=^[a-zA-Z0-9]+$>
+								<p>Letters and numbers: 4 - 16 characters</p>
+							</li>
+							<li><label for="password">Password*:</label>
+								<input type="text" id="pswd_reg" required name="user_password"
+								minlength="5" maxlength="16" >
+								<p>5 - 16 characters</p>
+							</li>
+							<li><label for="repeat_password">Repeat Password*:</label>
+								<input type="text" id="repeat_password" required name="user_password"
+								minlength="5" maxlength="16">
+								<p>* required fields</p>
+							</li>
+							<li class="button"><button id="button_reg" name="button-reg" type="submit">Submit</button>
+							</li>
+						</ul>
+					</form>
+				</div> -->
+			</div>
+			<div class="area-5">
+
+			</div>
+			<div class="area-6">
+
+			</div>
+			<div class="area-7">
+
+			</div>
+			<div class="area-8">
+
+			</div>
+			<div class="area-9">
+
+			</div>
+			<div class="area-10" id="works">
+
+			</div>
+			<div class="area-11">
+
+			</div>
+			<div class="area-12">
+
+			</div>
+			<div class="area-13">
+
+			</div>
+			<div class="area-14">
+
+			</div>
+			<div class="area-15">
+
+			</div>
+			<div class="area-16">
+				<div class="div_icons" id="div_icon_1">
+					<p id="p_icon_1" class="logos"><a href="https://github.com/Evgeniy-Biktimirkin/repository-1" title="Repository on Github" target="_blank">
+					<img src="images/GitHub-logo(28)(1).png"></a></p>
+				</div>
+				<div class="div_icons" id="div_icon_2">
+					<p id="p_icon_2" class="logos"><a href="https://vk.com/biktimirkin" title="Page on Vk" target="_blank">
+					<img src="images/VK_Compact_Logo_(2021-present)(28)(1).png"></a></p>
+				</div>
+				<div class="div_icons" id="div_icon_3">
+					<p id="p_icon_3" class="logos"><a href="https://linkedin.com" title="Page on LinkedIn" target="_blank">
+					<img src="images/linkedin-logo(28)(1).png"></a></p>
+				</div>
+				<!-- <div class="div_icons" id="div_icon_4">
+					<p id="icon_up"><a href="#main-menu" title="Up">
+					<img src="images/up.png"></a></p>
+				</div> -->
+			</div>
+		</div>
+	</div>
+
+	<script src="scripts/script-2.js" defer></script>
+</body>
+	
+</html>

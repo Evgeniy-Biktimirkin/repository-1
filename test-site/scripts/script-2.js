@@ -1,5 +1,3 @@
-//НИЧЕГО НЕ ТРОГАЙ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//НЕ СЛОМАНО - НЕ ЧИНИ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 var butLogin = document.querySelector("#button_login");
 var butLogout = document.querySelector("#button_logout");
@@ -14,43 +12,16 @@ var pswInput = document.querySelector("#pswd_log");
 var logLabel = document.querySelector("#log_lbl");
 var pwdLabel = document.querySelector("#pwd_lbl");
 
-var fLink = document.querySelector("#forum_link");
+var forumLink = document.querySelector("#forum_link");
+var userWorksLink = document.querySelector("#user_works");
 
-function loginClick(){ //для сравнения с массивом допустимых пар: логин-пароль
-  var loginVal = document.querySelector("#log_log").value;
-  var passwordVal = document.querySelector("#pswd_log").value;
-
-  var accessFlds = [
-    {lgn:"Alec", pwd:"A1c4sh"},
-    {lgn:"Fedr", pwd:"F1br3"}
-  ];
-  accessFlds.forEach(function(row){
-    if((loginVal == row.lgn) && (passwordVal == row.pwd)){
-      var loginFDelay = setTimeout(() => { //чтобы выполнился таймер, задаём функцию в переменную
-        loginFade()}, 400);
-      butLogin.addEventListener("onclick", loginFDelay());
-      //butLogin.addEventListener("onclick", loginFade()); //мгновенный вызов. Только при совпадении пар: логин-пароль
-      linksApear();
-    } else
-    {return;}
-  })
+function loginClick(){//функция нажатия на кнопку Логин(вызывает все соответствующие последствия)
+  var loginFDelay = setTimeout(//чтобы выполнился таймер, задаём функцию в переменную
+    loggedIn(), 600);
+  butLogin.addEventListener("onclick", loginFDelay());
 }
 
-function loginFade(){ //функция мгновенного убирания кнопки, строк и формы для логина 
-  logInput.style.display = "none";
-  pswInput.style.display = "none";
-  logLabel.style.display = "none";
-  pwdLabel.style.display = "none";
-
-  butLogin.style.display = "none";
-  formReg.style.display = "none";
-  fLink.style.display = "none";
-  /* СПРЯТАТЬ ССЫЛКУ ПОСТА РАССКАЗОВ ЮЗЕРА */
-  butLogout.style.display = "inline-block"
-}
-
-
-function loginAppear(){ //функция восстановления кнопки, строк и формы для логина
+function logoutClick(){ //функция восстановления кнопки, строк и формы для логина
   logInput.style.display = "inline-block";
   pswInput.style.display = "inline-block";
   logLabel.style.display = "inline-block";
@@ -58,26 +29,42 @@ function loginAppear(){ //функция восстановления кнопк
 
   butLogin.style.display = "inline-block";
   formReg.style.display = "inline-block";
-  fLink.style.display = "inline-block";
-  butLogout.style.display = "none"
+  userWorksLink.style.display = "none";
+  forumLink.style.display = "none";
+
+  butLogout.style.display = "none";
+
+  var cookie_date = new Date();
+  document.cookie = "password=; expires=" + cookie_date.toLocaleTimeString(-1);//удалить куки при закрытии браузера
 }
 
-function linksApear (){
-  if (lIn = 1){
-    fLink.style.display = "inline-block";
-    /* ДОБАВИТЬ ССЫЛКУ ФОРУМА */
+function get_cookie(cookie_name){
+  var results = document.cookie.match ('(^|;) ?' + cookie_name + '=([^;]*)(;|$)'); //ищет, есть ли куки с нашим названием
+  if (results){
+    return (results[2]);}
+  else
+    {return;}
+}
+var cooPVerif = get_cookie ("password");//интересует только сохранившийся пароль
 
-    }
-    else
-      /* ЕСЛИ НАЖАЛИ ЛОГАУТ */
-    {
-      fLink.style.display = "none";
-      /* СПРЯТАТЬ ССЫЛКУ ФОРУМА */
 
-    }
+function loggedIn(){ //страница выглядит залогиненной только если есть куки
+  if (cooPVerif != null){
+  logInput.style.display = "none";
+  pswInput.style.display = "none";
+  logLabel.style.display = "none";
+  pwdLabel.style.display = "none";
+
+  butLogin.style.display = "none"; 
+  formReg.style.display = "none";
+  userWorksLink.style.display = "inline-block";
+  forumLink.style.display = "inline-block";
+
+  butLogout.style.display = "inline-block";
+  }
 }
 
-
+loggedIn(); //для принудительной проверки наличия куки
 
 
 function repeatPassword(){ //чтобы появлялось сообщение, если пароли в окне рег-ции не совпадают
@@ -91,18 +78,18 @@ pswd.onchange = repeatPassword; //и при изменении пароля ...
 repeatPswd.onkeyup = repeatPassword; //и при вводе в Повторении активируется
 
 
-  DOB.onchange = function ageValid() {
+DOB.onchange = function ageValid() {
   var DOBStr = document.querySelector("#date_of_birth").value; //выбранная юзером в календарике
-  var DOBObj = new Date(DOBStr); //дата из строки
+  var DOBObj = new Date(DOBStr); //дата-объект из строки, выбранный
 
-  var sysD = new Date(); //сис.дата
+  var sysD = new Date(); //сис.дата-объект
   var year2006 = sysD.getFullYear() - 16; //наш год -16 лет
   var month2006 = sysD.getMonth();
   var date2006 = sysD.getDate();
-  var prehDObj = new Date(year2006, month2006, date2006); //дата -16 лет
+  var prehDObj = new Date(year2006, month2006, date2006); //дата-объект -16 лет
 
   if (DOBObj > prehDObj){
-    alert('Reader should be 16 years old at least');
+    alert('Reader should be 16 years old at least.');
     document.querySelector("#date_of_birth").value = null; //DOBStr не обнулял, пришлось целиком
     return; //возврат к началу функции
   } else {
