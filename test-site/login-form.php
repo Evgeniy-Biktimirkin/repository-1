@@ -18,10 +18,10 @@ $result_users_sel = sqlsrv_query($conn, $query_users_sel) or die('Error querying
 
 if ($result_users_sel > 0){ //если ЕСТЬ зарег-ный с такими логином + паролем, то
 while($row = sqlsrv_fetch_array ($result_users_sel)) {
-    echo " CONGRATULATIONS!! YOU LOGGED IN AS : " . $user_login . " !!!";
+    echo " CONGRATULATIONS! YOU LOGGED IN AS : " . $user_login . " !";
     /* $lIn = 1; -- ВМЕСТО КУКИ */
     $time = 60*60*24;
-    setcookie('login', $user_login, time()+$time, '/'); //создаём куки
+    $user_cookie = setcookie('login', $user_login, time()+$time, '/'); //создаём куки
     setcookie('password', $user_password, time()+$time, '/'); //неважно, какой алгоритм хеширования
     echo '<script>setTimeout(function(){document.location.href = "/index.html"}, 3500)</script>';
 }

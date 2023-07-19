@@ -14,7 +14,7 @@ if( $conn == false )
     }
     if(!empty($_POST["user_name"]) && ($_POST["user_name"] != ' ')){ //
         $user_name = $_POST["user_name"];
-    } else {echo ' Field "name" cannot be empty';} //проверка, чтобы хоть что-то вписали. Доп.проверки есть в СУБД и html
+    } else {echo ' Field "name" cannot be empty.';} //проверка, чтобы хоть что-то вписали. Доп.проверки есть в СУБД и html
 
     if(!empty($_POST["user_surname"]) && ($_POST["user_surname"] != ' ')){
         $user_surname = $_POST["user_surname"]; 
@@ -22,21 +22,21 @@ if( $conn == false )
 
     if(!empty($_POST["date_of_birth"]) && ($_POST["date_of_birth"] != ' ')){
         $date_of_birth = $_POST["date_of_birth"];
-    } else {echo ' Field "date of birth" cannot be empty';} //доп.проверки есть в СУБД и js
+    } else {echo ' Field "date of birth" cannot be empty.';} //доп.проверки есть в СУБД и js
     
     // $user_sex = $_POST["user_sex"]; -- пол прикрутил бы только для сбора статистики, но тогда понадобилась бы защита от "шутников"
 
     if(!empty($_POST["user_email"]) && ($_POST["user_email"] != ' ')){
         $user_email = $_POST["user_email"];
-    } else {echo ' Field "email" cannot be empty';} 
+    } else {echo ' Field "email" cannot be empty.';} 
 
     if(!empty($_POST["user_login"]) && ($_POST["user_login"] != ' ')){
         $user_login = $_POST["user_login"];
-    } else {echo ' Field "login" cannot be empty';} 
+    } else {echo ' Field "login" cannot be empty.';} 
 
     if(!empty($_POST["user_password"]) && ($_POST["user_password"] != ' ')){
         $user_password = hash('snefru', $_POST["user_password"]); //соответственно, в логине такую же
-    } else {echo ' Field "password" cannot be empty';}
+    } else {echo ' Field "password" cannot be empty.';}
 
 $query_users_sel_1 = "SELECT registered FROM dbo.users WHERE email = '$user_email'";
 $result_users_sel_1 = sqlsrv_query($conn, $query_users_sel_1)

@@ -24,17 +24,27 @@ email nvarchar(256) not null constraint CK_email_msg check(email like '%@%'),
 registered bit --   constraint FK_msg_registered foreign key references users (registered)
 );
 
+
+create table files (
+id int identity primary key,
+filename nvarchar(120) not null,
+--extension nvarchar(7),
+login nvarchar(16) not null unique constraint CK_log3_without_spaces check(login not like '% %'),
+compowner nvarchar(120),
+registered bit default 1,
+dateofpost date not null default FORMAT(SYSDATETIME(),'yyyy-MM-dd hh:mm'),
+email nvarchar(256) not null constraint CK_email_file check(email like '%@%'),
+textfileblob varchar(max) not null
+);
+
+
+
 COMMIT TRANSACTION;
 /
-drop table users;
-drop table messages;
-
-select CONVERT (date, SYSDATETIME() ) ;
 
 select * from users;
 select * from messages;
 
-alter database test_site_db character set utf8; --е..стественно х.
 alter table users alter column surname nvarchar(30) collate Cyrillic_General_CI_AS; --такая и так установлена
 --name nvarchar(120), 
 
@@ -44,4 +54,4 @@ insert into users (login, password, email, name, surname, dateofbirth, sex) valu
 ('1234', '12345', 'Lli_2022@gmail.com', 'Лёха', 'Ли', '2005-02-05', 'm');
 
 insert into users (login, password, email, name, surname, dateofbirth, sex) values
-('12345', '123456', 'Llie_2022@gmail.com', 'Лоха', 'Лье', '2002-03-05', 'm');
+('12345', '123456', 'Llie_2022@gmail.com', 'Лйоха', 'Лье', '2002-03-05', 'm');

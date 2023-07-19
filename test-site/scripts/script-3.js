@@ -1,6 +1,6 @@
 
 // Домашний вариант
-var uploadForm = document.querySelector("#upload-form");//элем.формы
+/* var uploadForm = document.querySelector("#upload-form");//элем.формы 
 
 function uploadFile(ev) {
 
@@ -8,10 +8,10 @@ function uploadFile(ev) {
   var myUploadForm = new FormData(uploadForm);//объект формо-данных формы
 
   var request1 = new XMLHttpRequest();//название запроса
-  request1.open("POST", "file_stash.php", true);//запрос-обращение 
+  request1.open("POST", "test-site/file_stash.php", true);//запрос-обращение 
   request1.onload = function(ev) {//уточнение, что делать по загрузке 
     if (request1.status == 200) {
-      areaOutput.innerHTML = "File uploaded!";
+      areaOutput.innerHTML = "File uploaded!"; //ТАЙМЕР НА СТИРАНИЕ НАДПИСИ ПРИКРУТИТЬ !_!
     } else {
       areaOutput.innerHTML = `Error ${request1.status} occurred when trying to upload your file.<br \/>`;
     }
@@ -20,7 +20,8 @@ function uploadFile(ev) {
   ev.preventDefault();
 };
 
-uploadForm.addEventListener('submit', uploadFile, false);
+uploadForm.addEventListener('submit', uploadFile, false); */
+
 
 
 
@@ -47,27 +48,5 @@ var request1 = new XMLHttpRequest();
 request1.open("POST", "http://foo.com/submitform.php");
 request1.send(myUploadForm);*/
 
-//  КАК БЫЛО  ==========================================================================
 
-/* var uploadForm = document.querySelector("#upload-form");//элем.формы
-uploadForm.addEventListener('submit', function(ev) {
-
-    var areaOutput = document.querySelector("area61");
-    var myUploadForm = new FormData(uploadForm);//объект формо-данных формы
-  
-    myUploadForm.append("number", serialNumber++);
-  
-    var request1 = new XMLHttpRequest();
-    request1.open("POST", "file_stash.php", true);
-    request1.onload = function(ev) {
-      if (request1.status == 200) {
-        areaOutput.innerHTML = "File uploaded!";
-      } else {
-        areaOutput.innerHTML = "Error " + request1.status + " occurred when trying to upload your file.<br \/>";
-      }
-    };
-  
-    request1.send(myUploadForm);
-    ev.preventDefault();
-}, false); */
 

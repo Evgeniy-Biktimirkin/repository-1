@@ -12,9 +12,17 @@ if( $conn == false )
      die ('Error connecting to the SQL Server database.');
      }
 
-     $user_name = $_POST["user_name"];
-     $user_email = $_POST["user_email"];
-     $user_message = $_POST["user_message"];
+     if(!empty($_POST["user_name"]) && ($_POST["user_name"] != ' ')){ //
+        $user_name = $_POST["user_name"];
+    } else {echo ' Name cannot be empty.';} //проверка, чтобы хоть что-то вписали. Доп.проверки есть в СУБД и html
+
+     if(!empty($_POST["user_email"]) && ($_POST["user_email"] != ' ')){
+        $user_email = $_POST["user_email"];
+    } else {echo ' Email cannot be empty.';}
+
+     if(!empty($_POST["user_message"]) && ($_POST["user_message"] != ' ')){
+        $user_message = $_POST["user_message"];
+    } else {echo ' Message cannot be empty.';}
 
 $query_users_ins = "INSERT INTO dbo.messages (name, email, message)
     VALUES 
