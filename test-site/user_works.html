@@ -2,16 +2,17 @@
 <html>
 <head>
 	<meta author="Biktimirkin Evgeniy" charset="utf-8">
-	<link href="styles/style-2.css" rel="stylesheet">
+	<link href="styles/style.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<!-- строка выше бесполезна -->
 	<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
-	<!-- надо и эту ссылку в HTML из Google fonts вставить, и в CSS -->
+
 	<title><Evgeniy's 2nd test page></title>
 
 	<script>
-		//var lIn = '<?php $lIn ?>'
-		window.onload = function (){if (cooPVerif != null){
+		
+		var filesData = '<?php $filesData ?>';
+	
+		window.onload = function (){if (cooLVerif != null){
 			document.getElementById("divo").style.visibility="visible"; //для авторизованных
 			document.getElementById("ahref").style.visibility="hidden";
 			document.getElementById("paragraph").style.visibility="hidden";
@@ -37,15 +38,18 @@
 				
 			</div>
 			<div class="area-3" id="main-menu">
-				<h3>Here you can upload your works. They won't be modered.
+				<h3>Here you can upload your 3 works. They won't be modered.
 					The site owner isn't responsible for the content.
 					Your texts here only for convenience and others acquaintance.</h3>
 			</div>
 			<div class="area-4">
 				 
 			</div>
-			<div class="area-5"  id="area51"> 
-				<form enctype="multipart/form-data"   id="upload-form"  action="file_stash.php" method="post"><!--  -->
+			<div class="area-5"  id="area51">
+				 
+				<button onclick="showFiles();" class="button" type="button" id="button_sh_files" name="button_files">Show files</button>
+
+				<form enctype="multipart/form-data"   id="upload-form"  action="file_stash.php" method="post">
 					<p>You can upload only 3 files with text extensions.</p>
 					<p><input type="file"  name="userfile"  multiple  accept="text/*"  id="input51">
 					<input type="submit"  value="Upload"  id="input52"></p>
@@ -55,7 +59,7 @@
 				<p id="area61"></p>
 			</div>
 			<div class="area-7">
-
+				<div id="files_table"></div>
 			</div>
 			<div class="area-8">
 
@@ -102,8 +106,8 @@
 		</div>
 	</div>
 
+	<script src="scripts/script.js" defer></script>
 	<script src="scripts/script-2.js" defer></script>
-	<script src="scripts/script-3.js" defer></script>
 </body>
 	
 </html>

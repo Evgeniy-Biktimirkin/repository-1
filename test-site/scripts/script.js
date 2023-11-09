@@ -17,7 +17,7 @@ var userWorksLink = document.querySelector("#user_works");
 
 function loginClick(){//функция нажатия на кнопку Логин(вызывает все соответствующие последствия)
   var loginFDelay = setTimeout(//чтобы выполнился таймер, задаём функцию в переменную
-    loggedIn(), 600);
+    loggedIn(), 600);//попробовать, будет ли работать с loggedIn без скобок !_!
   butLogin.addEventListener("onclick", loginFDelay());
 }
 
@@ -34,8 +34,8 @@ function logoutClick(){ //функция восстановления кнопк
 
   butLogout.style.display = "none";
 
-  var cookie_date = new Date();
-  document.cookie = "password=; expires=" + cookie_date.toLocaleTimeString(-1);//удалить куки при закрытии браузера
+  var cookie_date = new Date(-1);
+  document.cookie = "login=; expires=" + cookie_date.toLocaleTimeString();//удалить куки при закрытии браузера
 }
 
 function get_cookie(cookie_name){
@@ -45,11 +45,11 @@ function get_cookie(cookie_name){
   else
     {return;}
 }
-var cooPVerif = get_cookie ("password");//интересует только сохранившийся пароль
+var cooLVerif = get_cookie ("login");//интересует только имеется ли логин
 
 
 function loggedIn(){ //страница выглядит залогиненной только если есть куки
-  if (cooPVerif != null){
+  if (cooLVerif != null){
   logInput.style.display = "none";
   pswInput.style.display = "none";
   logLabel.style.display = "none";
